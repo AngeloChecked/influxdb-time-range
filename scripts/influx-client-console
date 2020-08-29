@@ -1,0 +1,3 @@
+container_name=$(docker ps | sed -n -E 's/([^ ])\ *( influxdb )\ *(.*)/\1/p')
+echo "container name: $container_name"
+docker exec -it $container_name influx
